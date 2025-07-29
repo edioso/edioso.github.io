@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Gráficas</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="../style/style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-green-800 text-white p-4">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold">Datos y Estadísticas</h1>
+      <nav class="space-x-4">
+        <a href="index.html" class="hover:underline">Inicio</a>
+        <a href="aboutus.html" class="hover:underline">Sobre Nosotros</a>
+        <a href="grafica.html" class="hover:underline font-semibold underline">Gráficas</a>
+        <a href="contact.html" class="hover:underline">Contacto</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="p-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      
+      <!-- Gráfico de Barra -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Cantidad de emprendimientos por departamento</h2>
+        <canvas id="barChart" height="300"></canvas>
+      </section>
+
+      <!-- Gráfico de Línea -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Crecimiento de emprendimientos en los últimos años</h2>
+        <canvas id="lineChart" height="300"></canvas>
+      </section>
+
+      <!-- Gráfico de Torta -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Distribución por tipo de emprendimiento</h2>
+        <canvas id="pieChart" height="300"></canvas>
+      </section>
+
+      <!-- Gráfico de Área -->
+      <section>
+        <h2 class="text-xl font-semibold mb-4">Inversión acumulada en innovación</h2>
+        <canvas id="areaChart" height="300"></canvas>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="../scripts/main.js" defer></script>
+
+  <footer class="bg-gray-100 text-center py-4 mt-8">
+    <p>&copy; 2025 Innovación Antioquia - Datos actualizados</p>
+  </footer>
+</body>
+</html>
+
+
+<section class="max-w-6xl mx-auto p-6 bg-white rounded shadow mt-8">
+  <h2 class="text-xl font-semibold mb-4">📖 Referencias y fuentes de datos</h2>
+  <ul class="list-disc list-inside space-y-2 text-sm text-gray-700">
+    <li>
+      Confecámaras (2024): Se crearon **305.997 unidades productivas en Colombia en 2023**, lo que representó una caída del 1,5 % frente a 2022.  
+      Fuente: informe *Dinámica de Creación de Empresas en Colombia – 2023* :contentReference[oaicite:2]{index=2}
+    </li>
+    <li>
+      Confecámaras / Cámara Medellín (2023): Antioquia fue la segunda región con mayor número de empresas creadas en el primer semestre (aproximadamente 15.725, equivalente al 9,5 % del total nacional).  
+      :contentReference[oaicite:3]{index=3}
+    </li>
+    <li>
+      DANE (EMICRON, I Trimestre 2025): El número de micronegocios en Colombia creció **8,3 % respecto al primer trimestre de 2024**, pero los ingresos cayeron 8,5 % y el empleo se redujo 0,6 %. :contentReference[oaicite:4]{index=4}
+    </li>
+  </ul>
+</section>
