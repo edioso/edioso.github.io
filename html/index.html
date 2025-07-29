@@ -3,16 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Emprendimiento en Antioquia</title>
+  <title>Energia Renovable</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gray-50 text-gray-800">
 
-    
-
   <!-- NAV -->
   <nav class="bg-green-700 text-white p-4 flex justify-between items-center shadow">
-    <h1 class="text-xl font-bold">Antioquia Innova</h1>
+    <h1 class="text-xl font-bold">Renueva tu Energia</h1>
     <ul class="flex space-x-4">
       <li><a href="index.html" class="hover:underline">Inicio</a></li>
       <li><a href="aboutus.html" class="hover:underline">Sobre Nosotros</a></li>
@@ -21,24 +20,25 @@
     </ul>
   </nav>
 
-    
-
-
   <!-- HERO -->
   <header class="bg-green-100 p-10 text-center">
-    <h2 class="text-3xl font-bold mb-4">Innovación y Emprendimiento en Antioquia</h2>
+    <h2 class="text-3xl font-bold mb-4">Energia Renovable</h2>
     <p class="text-lg">Descubre cómo Antioquia impulsa el crecimiento de emprendedores a través de redes de apoyo, innovación tecnológica y oportunidades reales.</p>
   </header>
 
-  
-
   <!-- CONTENIDO PRINCIPAL -->
   <main class="max-w-5xl mx-auto p-6">
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-green-800">Participación de Energías Renovables</h3>
+      <p class="mb-4">A continuación, puedes observar la distribución porcentual del uso de distintas fuentes de energía renovable:</p>
+      <div class="max-w-md mx-auto">
+        <canvas id="graficoTorta" width="400" height="400"></canvas>
+      </div>
+    </section>
 
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4 text-green-800">¿Qué es el Emprendimiento?</h3>
       <p class="mb-4">Es el proceso de iniciar y gestionar un nuevo negocio o idea innovadora, aprovechando oportunidades del mercado. En Antioquia, muchas startups han surgido con impacto regional y nacional.</p>
-      
       <h3 class="text-2xl font-semibold mb-4 text-green-800">¿Qué es la Innovación?</h3>
       <p>La innovación implica mejorar procesos, productos o servicios. No es solo tecnología, también incluye creatividad, sostenibilidad y transformación social. Antioquia promueve una cultura innovadora en educación, salud y empresas.</p>
     </section>
@@ -76,9 +76,10 @@
         <li><a href="https://www.semana.com/economia/emprendimiento" target="_blank" class="text-green-600 hover:underline">Emprendimiento en Semana</a></li>
       </ul>
     </section>
-
-    
   </main>
+
+  <!-- SCRIPTS -->
+  <script src="../scripts/grafico_torta.js"></script>
 
   <!-- FOOTER -->
   <footer class="bg-green-700 text-white text-center p-4 mt-10">
