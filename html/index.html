@@ -28,58 +28,85 @@
 
   <!-- CONTENIDO PRINCIPAL -->
   <main class="max-w-5xl mx-auto p-6">
+
+    <!-- Gráfico de Torta -->
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4 text-green-800">Participación de Energías Renovables</h3>
-      <p class="mb-4">A continuación, puedes observar la distribución porcentual del uso de distintas fuentes de energía renovable:</p>
+      <p class="mb-4">Distribución porcentual del uso de distintas fuentes de energía renovable:</p>
       <div class="max-w-md mx-auto">
         <canvas id="graficoTorta" width="400" height="400"></canvas>
       </div>
     </section>
 
+    <!-- Gráfico de Barras -->
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-green-800">Producción por Fuente</h3>
+      <p class="mb-4">Cantidad de energía producida por cada fuente renovable:</p>
+      <div class="max-w-2xl mx-auto">
+        <canvas id="graficoBarras" width="600" height="400"></canvas>
+      </div>
+    </section>
+
+    <!-- Gráfico de Líneas -->
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-green-800">Tendencia de Capacidad Instalada</h3>
+      <p class="mb-4">Evolución histórica de la capacidad instalada de fuentes renovables:</p>
+      <div class="max-w-3xl mx-auto">
+        <canvas id="graficoLineas" width="800" height="400"></canvas>
+      </div>
+    </section>
+
+    <!-- Texto informativo -->
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4 text-green-800">¿Qué es el Emprendimiento?</h3>
-      <p class="mb-4">Es el proceso de iniciar y gestionar un nuevo negocio o idea innovadora, aprovechando oportunidades del mercado. En Antioquia, muchas startups han surgido con impacto regional y nacional.</p>
+      <p class="mb-4">Es el proceso de iniciar y gestionar un nuevo negocio o idea innovadora, aprovechando oportunidades del mercado.</p>
       <h3 class="text-2xl font-semibold mb-4 text-green-800">¿Qué es la Innovación?</h3>
-      <p>La innovación implica mejorar procesos, productos o servicios. No es solo tecnología, también incluye creatividad, sostenibilidad y transformación social. Antioquia promueve una cultura innovadora en educación, salud y empresas.</p>
+      <p>La innovación implica mejorar procesos, productos o servicios. Antioquia promueve una cultura innovadora en educación, salud y empresas.</p>
     </section>
 
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4 text-green-800">Organizaciones que apoyan el emprendimiento</h3>
       <ul class="list-disc list-inside space-y-2">
-        <li>
-          <a href="https://www.rutanmedellin.org" target="_blank" class="text-green-600 hover:underline font-medium">
-            Ruta N Medellín
-          </a> – Centro de innovación y tecnología.
-        </li>
-        <li>
-          <a href="https://www.camaramedellin.com.co" target="_blank" class="text-green-600 hover:underline font-medium">
-            Cámara de Comercio de Medellín
-          </a> – Apoya a empresarios, formación y asesoría.
-        </li>
-        <li>
-          <a href="https://apps.udes.edu.co/observatorio/antioquia.html" target="_blank" class="text-green-600 hover:underline font-medium">
-            Observatorio de Innovación Antioquia
-          </a> – Datos e informes de innovación.
-        </li>
-        <li>
-          <a href="https://innpulsacolombia.com" target="_blank" class="text-green-600 hover:underline font-medium">
-            iNNpulsa Colombia
-          </a> – Promueve la innovación y emprendimiento nacional.
-        </li>
+        <li><a href="https://www.rutanmedellin.org" target="_blank" class="text-green-600 hover:underline font-medium">Ruta N Medellín</a></li>
+        <li><a href="https://www.camaramedellin.com.co" target="_blank" class="text-green-600 hover:underline font-medium">Cámara de Comercio de Medellín</a></li>
+        <li><a href="https://apps.udes.edu.co/observatorio/antioquia.html" target="_blank" class="text-green-600 hover:underline font-medium">Observatorio de Innovación Antioquia</a></li>
+        <li><a href="https://innpulsacolombia.com" target="_blank" class="text-green-600 hover:underline font-medium">iNNpulsa Colombia</a></li>
       </ul>
     </section>
 
     <section class="mb-10">
       <h3 class="text-2xl font-semibold mb-4 text-green-800">Noticias de interés</h3>
       <ul class="list-disc list-inside space-y-2">
-        <li><a href="https://www.elcolombiano.com/negocios/emprendimiento" target="_blank" class="text-green-600 hover:underline">Sección de Emprendimiento – El Colombiano</a></li>
-        <li><a href="https://www.semana.com/economia/emprendimiento" target="_blank" class="text-green-600 hover:underline">Emprendimiento en Semana</a></li>
+        <li><a href="https://www.elcolombiano.com/negocios/emprendimiento" target="_blank" class="text-green-600 hover:underline">Emprendimiento – El Colombiano</a></li>
+        <li><a href="https://www.semana.com/economia/emprendimiento" target="_blank" class="text-green-600 hover:underline">Emprendimiento – Semana</a></li>
       </ul>
     </section>
+
+    <!-- Bibliografía -->
+    <section class="mb-10">
+      <h3 class="text-2xl font-semibold mb-4 text-green-800">Bibliografía y Fuentes de Datos</h3>
+      <ul class="list-disc list-inside space-y-2">
+        <li><a href="https://ourworldindata.org/renewable-energy" target="_blank" class="text-green-600 hover:underline">Our World in Data – Renewable Energy</a></li>
+        <li><a href="https://ourworldindata.org/grapher/share-electricity-renewables" target="_blank" class="text-green-600 hover:underline">Participación de electricidad renovable</a></li>
+        <li><a href="https://ourworldindata.org/grapher/share-electricity-wind" target="_blank" class="text-green-600 hover:underline">Electricidad de viento</a></li>
+        <li><a href="https://ourworldindata.org/grapher/share-electricity-solar" target="_blank" class="text-green-600 hover:underline">Electricidad solar</a></li>
+        <li><a href="https://ourworldindata.org/grapher/share-electricity-hydro" target="_blank" class="text-green-600 hover:underline">Electricidad hidráulica</a></li>
+        <li><a href="https://ourworldindata.org/grapher/wind-generation" target="_blank" class="text-green-600 hover:underline">Generación de viento</a></li>
+        <li><a href="https://ourworldindata.org/grapher/solar-energy-consumption" target="_blank" class="text-green-600 hover:underline">Consumo de energía solar</a></li>
+        <li><a href="https://ourworldindata.org/grapher/hydropower-consumption" target="_blank" class="text-green-600 hover:underline">Consumo de energía hidráulica</a></li>
+        <li><a href="https://ourworldindata.org/grapher/biofuel-production" target="_blank" class="text-green-600 hover:underline">Producción de biocombustibles</a></li>
+        <li><a href="https://ourworldindata.org/grapher/installed-geothermal-capacity" target="_blank" class="text-green-600 hover:underline">Capacidad geotérmica instalada</a></li>
+        <li><a href="https://ourworldindata.org/grapher/cumulative-installed-wind-energy-capacity-gigawatts" target="_blank" class="text-green-600 hover:underline">Capacidad eólica instalada acumulada</a></li>
+        <li><a href="https://ourworldindata.org/grapher/installed-solar-PV-capacity" target="_blank" class="text-green-600 hover:underline">Capacidad solar fotovoltaica instalada</a></li>
+      </ul>
+    </section>
+
   </main>
 
   <!-- SCRIPTS -->
   <script src="../scripts/grafico_torta.js"></script>
+  <script src="../scripts/grafico_barras.js"></script>
+  <script src="../scripts/grafico_lineas.js"></script>
 
   <!-- FOOTER -->
   <footer class="bg-green-700 text-white text-center p-4 mt-10">
