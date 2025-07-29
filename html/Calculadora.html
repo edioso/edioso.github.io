@@ -46,17 +46,79 @@
       </div>
     </form>
 
-    <div id="resultado" class="mt-8 space-y-4 hidden">
-      <div class="bg-green-100 border border-green-300 p-4 rounded">
-        <p class="text-green-900 font-semibold" id="ahorro"></p>
-        <p class="text-green-900 font-semibold" id="costoSolar"></p>
-        <p class="text-green-900 font-semibold" id="tiempoRetorno"></p>
-        <p class="text-green-900" id="panelesNecesarios"></p>
-      </div>
-      <canvas id="grafico" height="300"></canvas>
-    </div>
+     <div id="resultado" class="mt-8 space-y-4 hidden">
+        <div class="bg-green-100 border border-green-300 p-4 rounded">
+          <p class="text-green-900 font-semibold" id="ahorro"></p>
+          <p class="text-green-900 font-semibold" id="costoSolar"></p>
+          <p class="text-green-900 font-semibold" id="tiempoRetorno"></p>
+          <p class="text-green-900" id="panelesNecesarios"></p>
+        </div>
+        <div class="bg-yellow-100 border border-yellow-300 p-4 rounded">
+          <p class="text-yellow-900 font-semibold" id="costoPorKwh"></p>
+          <p class="text-yellow-900 font-semibold">🔌 Recomendaciones para ahorrar energía:</p>
+          <ul class="text-yellow-800 list-disc list-inside">
+            <li>Usa bombillos LED en lugar de incandescentes.</li>
+            <li>Desconecta electrodomésticos que no estés usando.</li>
+            <li>Evita dejar el cargador del celular conectado.</li>
+            <li>Usa la lavadora con carga completa y en ciclos cortos.</li>
+            <li>Regula el uso de aires acondicionados y refrigeradores, mantenlos bien cerrados.</li>
+            <li>Apaga el computador si no lo usarás por más de 20 minutos.</li>
+          </ul>
+        </div>
+        <canvas id="grafico" height="300"></canvas>
+      
+      <div class="bg-yellow-100 border border-yellow-300 p-4 rounded mt-4">
+    <p class="text-yellow-900 font-semibold" id="costoPorKwh"></p>
+    <p class="text-yellow-900 font-semibold">🔌 Recomendaciones para ahorrar energía:</p>
+    <ul class="text-yellow-800 list-disc list-inside">
+      <li>Usa bombillos LED en lugar de incandescentes.</li>
+      <li>Desconecta electrodomésticos que no estés usando.</li>
+      <li>Evita dejar el cargador del celular conectado.</li>
+      <li>Usa la lavadora con carga completa y en ciclos cortos.</li>
+      <li>Regula el uso de aires acondicionados y refrigeradores, mantenlos bien cerrados.</li>
+      <li>Apaga el computador si no lo usarás por más de 20 minutos.</li>
+    </ul>
   </div>
 
+
+  <section class="bg-gradient-to-r from-yellow-50 to-green-100 py-12 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-4xl font-bold text-gray-800 mb-4 text-center">¿Por qué debemos hacer la transición a energías renovables?</h2>
+    <p class="text-lg text-gray-600 mb-10 text-center">
+      La energía convencional basada en combustibles fósiles es limitada, costosa y contaminante. La energía solar es limpia, abundante y cada vez más accesible. Pero… ¿por qué no todos la usan aún?
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Obstáculos -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-2xl font-semibold text-red-600 mb-4">Obstáculos actuales</h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li><strong>Inversión inicial alta</strong>: muchas familias no pueden pagar de contado.</li>
+          <li><strong>Falta de información</strong>: no saben cuántos paneles necesitan ni cómo funciona.</li>
+          <li><strong>Ausencia de financiamiento</strong>: pocos créditos o planes de pago accesibles.</li>
+          <li><strong>Falta de confianza</strong> en empresas instaladoras o en la tecnología.</li>
+        </ul>
+      </div>
+
+      <!-- Soluciones y transición -->
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <h3 class="text-2xl font-semibold text-green-600 mb-4">¿Cómo lograr una transición real?</h3>
+        <ul class="list-disc pl-5 text-gray-700 space-y-2">
+          <li><strong>Instala por fases</strong>: empieza con 1 o 2 paneles y ve ampliando según tus posibilidades.</li>
+          <li><strong>Simula tu ahorro</strong>: compara tu factura actual con lo que ahorrarías.</li>
+          <li><strong>Busca asesoría confiable</strong>: apóyate en entidades o técnicos certificados.</li>
+          <li><strong>Piensa a largo plazo</strong>: es una inversión que te libera de la factura eléctrica.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Cierre motivador -->
+     <div class=""></div>
+    <div class="mt-12 text-center">
+      <h4 class="text-xl font-bold text-gray-700">🌞 Cada kilovatio solar que generas es un paso hacia un hogar más libre, más limpio y más tuyo.</h4>
+    </div>
+  </div>
+</section>
   
   <nav class="bg-silver shadow-md p-6 rounded mb-6">
   <h2 class="text-xl font-bold text-gray-800 text-center mb-4">

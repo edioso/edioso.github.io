@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="p-6">
+
+  <h2 class="text-xl font-semibold mb-2">Generación moderna de energía</h2>
+  <p class="text-sm mb-4 text-gray-600">Medido en <span class="underline decoration-dotted">teravatios-hora</span>.</p>
+
+  <!-- Botones de visualización -->
+  <div class="flex gap-2 mb-4">
+    <button id="btnTabla" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded border">Mesa</button>
+    <button id="btnLinea" class="px-4 py-2 bg-gray-200 hover:bg-gray-300 rounded border">Línea</button>
+    <button id="btnBar" class="px-4 py-2 bg-blue-500 text-white rounded border border-blue-600">Bar</button>
+  </div>
+
+  <!-- Aquí puedes agregar tu gráfica -->
+  <canvas id="grafico" class="bg-white border rounded p-4"></canvas>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    const ctx = document.getElementById('grafico').getContext('2d');
+
+    let chart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Solar', 'Eólica', 'Hidro'],
+        datasets: [{
+          label: 'TWh',
+          data: [350, 500, 800],
+          backgroundColor: ['#f59e0b', '#3b82f6', '#10b981']
+        }]
+      },
+      options: {
+        responsive: true
+      }
+    });
+
+    // Botones
+    document.getElementById("btnBar").addEventListener("click", () => {
+      chart.config.type = 'bar';
+      chart.update();
+    });
+
+    document.getElementById("btnLinea").addEventListener("click", () => {
+      chart.config.type = 'line';
+      chart.update();
+    });
+
+    document.getElementById("btnTabla").addEventListener("click", () => {
+      alert("Aquí puedes mostrar una tabla en lugar de la gráfica");
+    });
+  </script>
+
+</body>
+</html>

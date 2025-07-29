@@ -1,4 +1,4 @@
-const form = document.getElementById("formulario");
+ const form = document.getElementById("formulario");
     const resultado = document.getElementById("resultado");
     const ahorroEl = document.getElementById("ahorro");
     const costoSolarEl = document.getElementById("costoSolar");
@@ -18,12 +18,10 @@ const form = document.getElementById("formulario");
         return;
       }
 
-      // Parámetros estimados
-      const produccionPorPanel = 35; // kWh por panel al mes
+      const produccionPorPanel = 35;
       const ahorroPorcentaje = 0.80;
-      const costoPorPanel = 1500000; // COP
+      const costoPorPanel = 1500000;
 
-      // Cálculos
       const ahorroMensual = pagoMensual * ahorroPorcentaje;
       const gastoConSolar = pagoMensual - ahorroMensual;
       const ahorroAnual = ahorroMensual * 12;
@@ -32,14 +30,16 @@ const form = document.getElementById("formulario");
       const costoTotal = panelesNecesarios * costoPorPanel;
       const tiempoRetorno = Math.ceil(costoTotal / (ahorroMensual || 1));
 
-      // Mostrar resultados
+      const costoKwh = pagoMensual / consumoKwh;
+      document.getElementById("costoPorKwh").textContent =
+        `💡 Estás pagando aproximadamente $${costoKwh.toFixed(2)} COP por cada kWh.`;
+
       resultado.classList.remove("hidden");
       ahorroEl.textContent = `✅ Estás pagando aproximadamente $${pagoMensual.toLocaleString()} al mes. Con energía solar podrías ahorrar cerca de $${ahorroMensual.toLocaleString()} cada mes ($${ahorroAnual.toLocaleString()} al año).`;
       panelesEl.textContent = `🔋 Necesitarías aproximadamente ${panelesNecesarios} panel(es) solares para cubrir el 80% de tu consumo.`;
       costoSolarEl.textContent = `💰 Inversión estimada: $${costoTotal.toLocaleString()} COP (incluyendo instalación).`;
       tiempoRetornoEl.textContent = `⏳ Recuperarías la inversión en aproximadamente ${tiempoRetorno} meses.`;
 
-      // Crear gráfico comparativo
       const meses = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'];
       const convencional = Array(12).fill(pagoMensual);
       const renovable = Array(12).fill(gastoConSolar);
