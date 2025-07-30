@@ -7,7 +7,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<body class="bg-gray-100 min-h-screen p-6">
+<body class="bg-green-100 min-h-screen p-6">
 
   
   <!-- NAV -->
@@ -34,13 +34,17 @@
         <input type="number" id="kwh" required placeholder="Ej: 305"
                class="w-full mt-2 p-3 border border-gray-300 rounded" />
       </div>
+
+      
+
       <div>
         <label for="pago" class="block font-semibold text-gray-700">Pago mensual actual (COP)</label>
         <input type="number" id="pago" required placeholder="Ej: 180000"
                class="w-full mt-2 p-3 border border-gray-300 rounded" />
-      </div>
+       </div>
 
-      <p id="valorPromedioKwh" class="text-sm text-gray-600 mt-2"></p>
+         <p id="valorPromedioKwh" class=" px-6 py-3 rounded w-full text-center text-green-800 font-medium"></p>
+
       <div class="col-span-full">
         <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded w-full">
           Calcular Ahorro e Inversión
