@@ -10,8 +10,36 @@
     form.addEventListener("submit", function (e) {
       e.preventDefault();
 
+      document.getElementById("resetBtn").addEventListener("click", function () {
+  form.reset();
+  resultado.classList.add("hidden");
+
+  // Limpiar campos de resultados
+  document.getElementById("costoPorKwh").textContent = "";
+  document.getElementById("valorPromedioKwh").textContent = "";
+  ahorroEl.textContent = "";
+  costoSolarEl.textContent = "";
+  tiempoRetornoEl.textContent = "";
+  panelesEl.textContent = "";
+
+  // Destruir gráfico si existe
+  if (grafico) {
+    grafico.destroy();
+    grafico = null;
+  }
+});
+
+
       const consumoKwh = parseFloat(document.getElementById("kwh").value);
       const pagoMensual = parseFloat(document.getElementById("pago").value);
+      const precioKwhColombia = 800; // Valor promedio en COP por kWh
+      const costoEstimado = consumoKwh * precioKwhColombia;
+      const ahorro = pagoMensual - costoEstimado;
+
+      document.getElementById("valorPromedioKwh").textContent =
+  `📊 En Colombia, se estima que el costo promedio del kWh es de $${precioKwhColombia.toLocaleString()} COP.`;
+
+
 
       if (isNaN(consumoKwh) || isNaN(pagoMensual) || consumoKwh <= 0 || pagoMensual <= 0) {
         alert("Por favor, ingresa valores válidos.");
@@ -21,6 +49,7 @@
       const produccionPorPanel = 35;
       const ahorroPorcentaje = 0.80;
       const costoPorPanel = 1500000;
+      
 
       const ahorroMensual = pagoMensual * ahorroPorcentaje;
       const gastoConSolar = pagoMensual - ahorroMensual;

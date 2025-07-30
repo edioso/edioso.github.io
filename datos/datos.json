@@ -1,0 +1,7 @@
+[
+  { "pais": "Colombia", "anio": 1965, "fuente": "Hidráulica", "valor": 3000 },
+  { "pais": "Colombia", "anio": 1970, "fuente": "Hidráulica", "valor": 3200 },
+  { "pais": "Colombia", "anio": 1980, "fuente": "Solar", "valor": 100 },
+  { "pais": "España", "anio": 1965, "fuente": "Hidráulica", "valor": 2800 },
+  { "pais": "España", "anio": 1980, "fuente": "Eólica", "valor": 500 }
+]
