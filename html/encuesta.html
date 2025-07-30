@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Energia Renovable</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+  <!-- NAV -->
+  <nav class="bg-green-700 text-white p-4 flex justify-between items-center shadow">
+    <h1 class="text-xl font-bold">Renueva tu Energia</h1>
+    <ul class="flex space-x-4">
+      <li><a href="index.html" class="hover:underline">Inicio</a></li>
+      <li><a href="aboutus.html" class="hover:underline">Sobre Nosotros</a></li>
+      <li><a href="Calculadora.html" class="hover:underline">Calcular</a></li>
+      <li><a href="contact.html" class="hover:underline">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <header class="bg-green-100 p-10 text-center">
+    <h2 class="text-3xl font-bold mb-4">Energia Renovable</h2>
+    <p class="text-lg">Descubre cómo Antioquia impulsa el crecimiento de emprendedores a través de redes de apoyo, innovación tecnológica y oportunidades reales.</p>
+  </header>
+
+<body class="bg-green-100 p-6 w-full">
+  <div class="max-w-xl mx-auto bg-white rounded w-full shadow p-6">
+    <h2 class="text-2xl font-bold mb-4 text-green-700">🌱 Encuesta sobre Energías Renovables</h2>
+    
+    <form id="encuestaForm">
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">¿Qué fuentes de energía renovable conoces?</label>
+        <div class="space-y-1">
+          <label><input type="checkbox" name="conocidas" value="Solar"> Energía Solar</label><br />
+          <label><input type="checkbox" name="conocidas" value="Eólica"> Energía Eólica</label><br />
+          <label><input type="checkbox" name="conocidas" value="Hidroeléctrica"> Energía Hidroeléctrica</label><br />
+          <label><input type="checkbox" name="conocidas" value="Biomasa"> Energía de Biomasa</label><br />
+          <label><input type="checkbox" name="conocidas" value="Geotérmica"> Energía Geotérmica</label>
+        </div>
+      </div>
+
+      <div class="mb-4">
+        <label class="block font-semibold mb-2">¿Cuál usas en tu casa actualmente?</label>
+        <select name="usoHogar" class="w-full border rounded px-3 py-2" required>
+          <option value="">-- Selecciona una opción --</option>
+          <option value="Ninguna">Ninguna</option>
+          <option value="Solar">Energía Solar</option>
+          <option value="Eólica">Energía Eólica</option>
+          <option value="Hidroeléctrica">Energía Hidroeléctrica</option>
+          <option value="Otra">Otra</option>
+        </select>
+      </div>
+
+      <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">
+        Enviar respuestas
+      </button>
+    </form>
+
+    <div id="mensaje" class="mt-6 hidden p-4 rounded bg-green-50 border border-green-300 text-green-700"></div>
+  </div>
+
+  <script>
+    const form = document.getElementById("encuestaForm");
+    const mensaje = document.getElementById("mensaje");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault();
+
+      const conocidas = Array.from(document.querySelectorAll('input[name="conocidas"]:checked'))
+        .map(cb => cb.value)
+        .join(', ');
+
+      const usoHogar = form.usoHogar.value;
+
+      const datos = {
+        conocidas: conocidas,
+        usoHogar: usoHogar
+      };
+
+      // ⛳️ Reemplaza esto con tu propia URL del script
+      const url = "https://script.google.com/macros/s/AKfycbxe7NmzEqorelC2VsMkPtAxVQhZUl_aWdH4TUDnwWsLG3g30_Ebc_OqVnTLq0hILnih/exec";
+
+      function doPost(e) {
+  const hoja = SpreadsheetApp.getActiveSpreadsheet().getSheetByName("Respuestas");
+  const datos = JSON.parse(e.postData.contents);
+  hoja.appendRow([new Date(), datos.conocidas, datos.uso]);
+  return ContentService.createTextOutput("OK");
+}
+
+function doOptions(e) {
+  return ContentService.createTextOutput("")
+    .setMimeType(ContentService.MimeType.TEXT)
+    .setHeader("Access-Control-Allow-Origin", "*")
+    .setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+    .setHeader("Access-Control-Allow-Headers", "Content-Type");
+}
+
+
+      try {
+        const res = await fetch(url, {
+          method: "POST",
+          body: JSON.stringify(datos),
+          headers: {
+            "Content-Type": "application/json"
+          }
+        });
+
+        if (res.ok) {
+          mensaje.classList.remove("hidden");
+          mensaje.textContent = "✅ ¡Gracias por participar! Tus respuestas han sido enviadas.";
+          form.reset();
+        } else {
+          throw new Error("Error al enviar");
+        }
+      } catch (error) {
+        mensaje.classList.remove("hidden");
+        mensaje.classList.replace("bg-green-50", "bg-red-100");
+        mensaje.classList.replace("border-green-300", "border-red-400");
+        mensaje.classList.replace("text-green-700", "text-red-700");
+        mensaje.textContent = "❌ Hubo un error al enviar tus respuestas. Intenta de nuevo.";
+      }
+    });
+  </script>
+</body>
+</html>
