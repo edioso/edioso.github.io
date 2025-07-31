@@ -1,11 +1,22 @@
 body {
-  font-family: Arial, sans-serif;
-  margin: 20px;
-  background-color: #f9fafb;
+  margin: 0;
+  background-color: lightgreen ;
+}
+#canvas {
+  display: block;
+}
+#countdown {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font: bold 24px sans-serif;
+  color: rgb(221, 235, 221) ;
+  background: rgba(152, 226, 198, 0.7);
+  padding: 10px;
+  border-radius: 5px;
+  display: none;
 }
 
-canvas {
-  max-width: 600px;
-  margin: 20px auto;
-  display: block;
+#countdown {
+  display: none !important;
 }

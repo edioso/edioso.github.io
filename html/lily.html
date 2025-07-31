@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" >
+     
+    
+</head>
+<body>
+
+    <div class="mb-3">
+    <label for="calculoEnergia" class="form-label">Consumo de Energia</label>
+    <input type="number" class="form-control" id="calculoEnergia" placeholder="Ingrese el número de KWh consumidos">
+    </div>
+
+
+    <button type="button" class="btn btn-primary btn-lg" id="calcular" onclick="calcularPorcentajeEnergiaRenovable()">Calcular</button>
+    
+
+    <script>
+        const datosProduccionEnergia = {
+    totalProduccionEnergia: 100000, // Producción total de energía en kWh (ejemplo)
+    fuentes: [
+        { nombre: "Solar", tipo: "renovable", capacidadInstalada: 30000, produccion: 25000 },
+        { nombre: "Eólica", tipo: "renovable", capacidadInstalada: 40000, produccion: 35000 },
+        { nombre: "Hidroeléctrica", tipo: "renovable", capacidadInstalada: 25000, produccion: 20000 },
+        { nombre: "Geotérmica", tipo: "renovable", capacidadInstalada: 5000, produccion: 4000 },
+        { nombre: "Carbón", tipo: "no-renovable", capacidadInstalada: 80000, produccion: 70000 },
+        { nombre: "Gas Natural", tipo: "no-renovable", capacidadInstalada: 60000, produccion: 55000 }
+    ]
+};
+
+function calcularPorcentajeEnergiaRenovable(consumoUsuarioKWh, datosEnergia) {
+    let capacidadRenovableTotal = 0;
+    let produccionRenovableTotal = 0;
+
+    // 1. Calcular la capacidad instalada y producción total de energía renovable
+    for (const fuente of datosEnergia.fuentes) {
+        if (fuente.tipo === "renovable") {
+            capacidadRenovableTotal += fuente.capacidadInstalada;
+            produccionRenovableTotal += fuente.produccion;
+        }
+    }
+
+    // 2. Calcular la proporción de energía renovable en la producción total
+    const totalProduccionGlobal = datosEnergia.totalProduccionEnergia;
+    const proporcionRenovableProduccion = (produccionRenovableTotal / totalProduccionGlobal) * 100;
+
+    // 3. Calcular el porcentaje de energía renovable en el consumo del usuario
+    // Suponemos que el consumo del usuario es abastecido por la misma proporción renovable
+    // que la producción global de energía.
+    const energiaRenovableConsumidaUsuario = (consumoUsuarioKWh * (produccionRenovableTotal / totalProduccionGlobal));
+    const porcentajeRenovableConsumoUsuario = (energiaRenovableConsumidaUsuario / consumoUsuarioKWh) * 100;
+
+    // Redondear a dos decimales para una mejor presentación
+    const capacidadRenovableTotalRedondeada = capacidadRenovableTotal.toFixed(2);
+    const proporcionRenovableProduccionRedondeada = proporcionRenovableProduccion.toFixed(2);
+    const porcentajeRenovableConsumoUsuarioRedondeado = porcentajeRenovableConsumoUsuario.toFixed(2);
+
+    return {
+        capacidadRenovableTotal: capacidadRenovableTotalRedondeada,
+        proporcionRenovableProduccion: proporcionRenovableProduccionRedondeada,
+        porcentajeRenovableConsumoUsuario: porcentajeRenovableConsumoUsuarioRedondeado
+    };
+}
+
+// --- Uso de la función ---
+
+// Pedir al usuario su consumo eléctrico total
+const consumoElectricoUsuarioStr = document.getElementById('calculoEnergia');
+const consumoElectricoUsuario = parseFloat(consumoElectricoUsuarioStr);
+
+
+    const resultados = calcularPorcentajeEnergiaRenovable(consumoElectricoUsuario, datosProduccionEnergia);
+
+    console.log(`--- Análisis Energético ---`);
+    console.log(`Capacidad instalada renovable total: ${resultados.capacidadRenovableTotal} kWh`);
+    console.log(`Proporción de energía renovable en la producción total: ${resultados.proporcionRenovableProduccion}%`);
+    console.log(`Porcentaje de energía renovable en su consumo total: ${resultados.porcentajeRenovableConsumoUsuario}%`);
+
+    const boton= document.getElementById('calcular');
+    boton.addEventListener('click' , calcularPorcentajeEnergiaRenovable)
+
+    boton.addEventListener('click', function(calcularPorcentajeEnergiaRenovable){
+    alert(  `Resultados:\n` +
+            `Capacidad instalada renovable total: ${resultados.capacidadRenovableTotal} kWh\n` +
+            `Proporción de energía renovable en la producción total: ${resultados.proporcionRenovableProduccion}%\n` +
+            `Porcentaje de energía renovable en su consumo total: ${resultados.porcentajeRenovableConsumoUsuario}%`);
+    });
+
+
+    </script>
+   
+
+</body>
+</html>
