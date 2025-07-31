@@ -12,7 +12,7 @@ img.onload = () => {
   drawBoard();
 };
 
-img.src = '../imagen/sol3.jpg'; // Asegúrate que esta ruta sea correcta
+img.src = '../assets/sol3.jpg'; // Asegúrate que esta ruta sea correcta
 
 function setupCanvasSize() {
   const size = Math.min(window.innerWidth, window.innerHeight);
