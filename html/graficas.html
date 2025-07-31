@@ -50,7 +50,7 @@
     let datosAgrupados = {};
 
     // Cargar el JSON y preparar el selector
-    fetch("datos.json")
+    fetch("../datos/datos.json")
       .then(res => res.json())
       .then(datos => {
         // Agrupar por país
