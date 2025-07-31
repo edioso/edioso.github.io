@@ -98,7 +98,7 @@ function startRedirectCountdown() {
     document.getElementById('secs').textContent = secs;
     if (secs <= 0) {
       clearInterval(countdownInterval);
-      window.location.href = '../html/index.html';
+      window.location.href = '../html/home.html';
     }
   }, 1000);
 }
