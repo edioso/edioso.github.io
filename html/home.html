@@ -66,23 +66,32 @@
 </section>
 
     
+    <!-- Contenedor de gráficos -->
+<section class="mb-10">
+  <h3 class="text-2xl font-semibold mb-6 text-green-800 text-center">Comparación de Energías Renovables</h3>
+  <div class="flex flex-col md:flex-row justify-center gap-6">
+    
     <!-- Gráfico de Torta -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4 text-green-800">Participación de Energías Renovables</h3>
-      <p class="mb-4">Distribución porcentual del uso de distintas fuentes de energía renovable:</p>
-      <div class="max-w-md mx-auto">
+    <div class="flex-1 bg-white shadow-lg rounded-lg p-6">
+      <h4 class="text-xl font-semibold mb-3 text-green-700">Participación de Energías Renovables</h4>
+      <p class="text-sm mb-4">Distribución porcentual del uso de distintas fuentes de energía renovable:</p>
+      <div class="w-full max-w-md mx-auto">
         <canvas id="graficoTorta" width="400" height="400"></canvas>
       </div>
-    </section>
+    </div>
 
     <!-- Gráfico de Barras -->
-    <section class="mb-10">
-      <h3 class="text-2xl font-semibold mb-4 text-green-800">Producción por Fuente</h3>
-      <p class="mb-4">Cantidad de energía producida por cada fuente renovable:</p>
-      <div class="max-w-2xl mx-auto">
-        <canvas id="graficoBarras" width="600" height="400"></canvas>
+    <div class="flex-1 bg-white shadow-lg rounded-lg p-6">
+      <h4 class="text-xl font-semibold mb-3 text-green-700">Producción por Fuente</h4>
+      <p class="text-sm mb-4">Cantidad de energía producida por cada fuente renovable:</p>
+      <div class="w-full max-w-md mx-auto">
+        <canvas id="graficoBarras" width="400" height="400"></canvas>
       </div>
-    </section>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Gráfico de Líneas -->
     <section class="mb-10">
@@ -93,18 +102,22 @@
       </div>
     </section>
 
-    <!-- Gráfico 3D -->
     <section class="mb-10">
-       <h3 class="text-2xl font-semibold mb-4 text-green-800">Generación de Energía Renovable por País (1965-2025)</h3>
-      <div class="text-center mt-8">
-  <a href="../html/graficas.html"
-     class="inline-block bg-orange-500 hover:bg-orange-600 text-green font-bold py-3 px-6 rounded-xl shadow-lg transition-transform transform hover:scale-105">
-    📊 Ver Gráfica
-  </a>
-</div>
+  <h3 class="text-2xl font-semibold mb-4 text-green-800 text-center">
+    Dato historico del uso de Energía Renovable por País desde 1965 hasta 2021 en el mundo.
+  </h3>
 
-    </section>  
-   
+  <div class="text-center mt-8">
+    <a href="../html/graficas.html"><h1 class="text-4x1 text-green-800 t">Clic en la Imagen</h1>
+      <img 
+        src="../assets/energia renovable.jpg" 
+        alt="Ver gráfica 3D"
+        class="mx-auto rounded-xl shadow-lg hover:scale-105 hover:shadow-xl transition-transform duration-300 cursor-pointer"
+        width="400"
+      >
+    </a>
+  </div>
+</section>  
 
 
 
