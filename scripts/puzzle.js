@@ -3,7 +3,7 @@ const ctx = canvas.getContext('2d');
 const img = new Image();
 const GRID = 2;
 let tileSize, board = [], empty = {};
-let redirectSeconds = 5, countdownInterval;
+let redirectSeconds = 1, countdownInterval;
 
 img.onload = () => {
   setupCanvasSize();
