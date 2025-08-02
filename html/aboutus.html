@@ -1,101 +1,109 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sobre Nosotros</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!--
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
--->
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
+<body class="bg-gradient-to-b from-green-100 via-blue-50 to-white text-gray-800">
 
-<body class="bg-green-50 text-green-800 font-mono ">
 
-  <!-- NAV -->
-  <nav class="bg-green-500 text-white p-4 flex justify-between items-center shadow">
-    <img src="../assets/solar2-removebg-preview.png" alt="Logo Solar" width="200">
-    <ul class="flex space-x-4">
-       <li><a href="home.html" class="hover:underline text-green-900 text-xl">Inicio</a></li>
-      <li><a href="aboutus.html" class="hover:underline text-green-900 text-xl">Sobre Nosotros</a></li>
-      <li><a href="Calculadora.html" class="hover:underline text-green-900 text-xl">Calcular</a></li>
-      <li><a href="contact.html" class="hover:underline text-green-900 text-xl ">Contacto</a></li>
-    </ul>
-  </nav>
-
-  
-  <main class="container mx-auto p-6 space-y-6">
-   <section class="grid md:grid-cols-2 gap-8 mt-6">
-  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
-    <h2 class="text-2xl font-semibold text-green-800 mb-2">Nuestra Misión</h2>
-    <p class="text-black">Promover el uso de energías limpias mediante soluciones accesibles en paneles solares, fomentando la conciencia ambiental y el ahorro energético en hogares y empresas colombianas.</p>
-  </div>
-  <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300">
-    <h2 class="text-2xl font-semibold text-green-800 mb-2">Nuestra Visión</h2>
-    <p class="text-black">Ser líderes en el sector de energía solar en Antioquia, brindando productos de calidad, asesoría personalizada y contribuyendo a un futuro más sostenible para la región.</p>
-  </div>
-</section>
-
-<section class="mt-10">
-    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300 max-w-3xl mx-auto">
-  <h2 class="text-3xl font-semibold text-center text-green -800 mb-6">¿Qué Hacemos?</h2>
-      <p class="text-center text-lg text-black">
-      Nos especializamos en la venta, instalación y mantenimiento de paneles solares para hogares, negocios y comunidades rurales. Acompañamos a nuestros clientes en todo el proceso, desde la asesoría inicial hasta la puesta en marcha del sistema.
-    </p>
-  </div>
-</section>
-
-<section class="mt-10">
-  <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Nuestro Equipo</h2>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-    
-    <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-      <img src="https://via.placeholder.com/150" alt="Juan Serna" class="mx-auto rounded-full w-24 h-24 object-cover mb-4">
-      <h3 class="text-xl font-bold text-green-800">Juan Serna</h3>
-      <p class="text-sm text-gray-600">Fundador y Programador en formación</p>
+  <header class="bg-green-700 w-full shadow-md z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex items-center">
+          <img src="../assets/solar2-removebg-preview.png" alt="Logo" class="h-16 w-auto">
+          <span class="ml-3 text-xl font-semibold text-white">Renueva tu Energía</span>
+        </div>
+        <nav class="space-x-6">
+          <a href="home.html" class="text-white hover:text-green-200 font-medium text-lg">Inicio</a>
+          <a href="aboutus.html" class="text-white hover:text-green-200 font-medium text-lg">Sobre Nosotros</a>
+          <a href="Calculadora.html" class="text-white hover:text-green-200 font-medium text-lg">Calcular</a>
+          <a href="contact.html" class="text-white hover:text-green-200 font-medium text-lg">Contacto</a>
+        </nav>
+      </div>
     </div>
+  </header>
 
-    <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-      <img src="../assets/edisonO.png" alt="Edison Osorio" class="mx-auto rounded-full w-24 h-24 object-cover mb-4">
-      <h3 class="text-xl font-bold text-green-800">Edison Osorio</h3>
-      <p class="text-sm text-gray-600">Fundador y Programador en formación</p>
+  <section class="text-center py-10 px-4">
+    <h1 class="text-4xl font-extrabold text-green-800">Sobre Nosotros</h1>
+    <p class="mt-4 text-lg max-w-3xl mx-auto">Somos una plataforma educativa dedicada a asesorar personas interesadas en adoptar energía solar. No realizamos instalaciones, pero te damos las herramientas para entender y decidir.</p>
+  </section>
+
+  <section class="bg-white py-10 px-6 rounded-lg shadow-md max-w-5xl mx-auto">
+    <h2 class="text-3xl font-semibold text-green-800 text-center mb-6">¿Qué hacemos?</h2>
+    <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">Te ayudamos a entender si la energía solar es una buena opción para ti, cómo funciona, cuánto podrías ahorrar y qué deberías saber antes de hablar con una empresa instaladora.</p>
+  </section>
+
+  <section class="mt-10">
+    <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300 max-w-4xl mx-auto">
+      <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">¿Cómo te ayudamos?</h2>
+      <ul class="list-disc list-inside text-black text-lg space-y-2">
+        <li>Analizamos tu consumo energético y tus necesidades reales.</li>
+        <li>Te explicamos qué tipo de paneles solares se adaptan mejor a tu caso.</li>
+        <li>Te orientamos en presupuestos, comparación de proveedores e instalación.</li>
+        <li>Te ofrecemos herramientas como nuestra Calculadora Solar para tomar decisiones informadas.</li>
+      </ul>
     </div>
+  </section>
 
-    <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-      <img src="../assets/jennifer2.jpg" alt="Jennifer Ramirez" class="mx-auto rounded-full w-24 h-24 object-cover mb-4">
-      <h3 class="text-xl font-bold text-green-800">Jennifer Ramirez</h3>
-      <p class="text-sm text-gray-600">Fundadora y Programadora en formación</p>
+  <section class="mt-10">
+    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Nuestros Valores</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+      <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-green-800 mb-2">🌿 Compromiso Ambiental</h3>
+        <p class="text-sm text-gray-600">Creemos en un futuro más limpio a través del uso consciente de la energía.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-green-800 mb-2">🤝 Asesoría Transparente</h3>
+        <p class="text-sm text-gray-600">Nos importa que tomes decisiones con información clara y honesta.</p>
+      </div>
+      <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
+        <h3 class="text-xl font-bold text-green-800 mb-2">📚 Educación Accesible</h3>
+        <p class="text-sm text-gray-600">Explicamos todo de manera sencilla para que entiendas el proceso sin complicaciones.</p>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
+  <section class="mt-16 max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Misión y Visión</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-green-700 mb-2">🎯 Misión</h3>
+        <p class="text-gray-700">Guiar a las personas en su transición hacia una energía más limpia mediante información clara, precisa y accesible.</p>
+      </div>
+      <div class="bg-white p-6 rounded-lg shadow-md">
+        <h3 class="text-xl font-bold text-green-700 mb-2">🚀 Visión</h3>
+        <p class="text-gray-700">Ser referentes en asesoría energética en Latinoamérica, promoviendo un cambio sostenible y consciente.</p>
+      </div>
+    </div>
+  </section>
 
-</main>
-<!-- Galería de imágenes
-<section class="bg-white py-10">
-  <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Soluciones en Energía Solar</h2>
-  <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+  <section class="mt-16 max-w-5xl mx-auto px-6">
+    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Nuestro Equipo</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-4 rounded-lg shadow-md text-center">
+        <img src="../assets/jennifer2.jpg" alt="Miembro 1" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
+        <h3 class="font-bold text-green-700">Jennifer Ramirez</h3>
+        <p class="text-sm text-gray-600">Programador Junior</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md text-center">
+        <img src="../assets/JS.jpeg" alt="Miembro 2" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
+        <h3 class="font-bold text-green-700">Juan Serna</h3>
+        <p class="text-sm text-gray-600">Programador Junior</p>
+      </div>
+      <div class="bg-white p-4 rounded-lg shadow-md text-center">
+        <img src="../assets/edisonO.png" alt="Edison Osorio" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
+        <h3 class="font-bold text-green-700">Edison Osorio</h3>
+        <p class="text-sm text-gray-600">Programador Junior</p>
+      </div>
+    </div>
+  </section>
 
-    <a href="https://cdn.pixabay.com/photo/2017/02/01/14/48/solar-panels-2038184_960_720.jpg" data-lightbox="galeria" data-title="Panel solar 1">
-      <img src="https://cdn.pixabay.com/photo/2017/02/01/14/48/solar-panels-2038184_960_720.jpg" alt="Panel solar 1" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 object-cover h-48 w-full">
-    </a>
-
-    <a href="https://cdn.pixabay.com/photo/2020/05/21/08/50/solar-panels-5196884_960_720.jpg" data-lightbox="galeria" data-title="Panel solar 2">
-      <img src="https://cdn.pixabay.com/photo/2020/05/21/08/50/solar-panels-5196884_960_720.jpg" alt="Panel solar 2" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 object-cover h-48 w-full">
-    </a>
-
-    <a href="https://cdn.pixabay.com/photo/2017/03/09/12/31/solar-system-2125650_960_720.jpg" data-lightbox="galeria" data-title="Panel solar 3">
-      <img src="https://cdn.pixabay.com/photo/2017/03/09/12/31/solar-system-2125650_960_720.jpg" alt="Panel solar 3" class="rounded-lg shadow-md hover:shadow-xl transition duration-300 object-cover h-48 w-full">
-    </a>
-
-  </div>
-</section>
--->
-
-  </main>
-
-  <footer class="bg-gray-100 text-center py-4 mt-8">
-    <p>&copy; 2025 Innovación Antioquia.</p>
+  <footer class="mt-20 bg-green-900 text-white text-center py-6">
+    <p>&copy; 2025 Renueva tu Energía. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>

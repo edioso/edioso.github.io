@@ -2,31 +2,36 @@ const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const img = new Image();
 const logoImg = new Image();
-const GRID = 2;
+const GRID = 2; 
 
 let tileSize, board = [], empty = {};
-let redirectSeconds = 1, countdownInterval;
+let redirectSeconds = 3, countdownInterval;
 
-// Carga imágenes
+
 img.src = '../assets/sol3.jpg';
-logoImg.src = '../assets/solar2.png'; // Asegúrate de que esta ruta sea correcta
+logoImg.src = '../assets/solar2.png';
+const moveSound = new Audio('../assets/move.mp3'); 
 
-// Espera a que ambas imágenes carguen
 let imagesLoaded = 0;
 [img, logoImg].forEach(image => {
   image.onload = () => {
     imagesLoaded++;
     if (imagesLoaded === 2) {
-      setupCanvasSize();
-      initBoard();
-      shuffleBoard();
-      drawBoard();
+      startGame();
     }
   };
 });
 
+function startGame() {
+  setupCanvasSize();
+  initBoard();
+  shuffleBoard();
+  drawBoard();
+  hideCountdown();
+}
+
 function setupCanvasSize() {
-  const size = Math.min(window.innerWidth, window.innerHeight);
+  const size = Math.min(window.innerWidth * 0.9, window.innerHeight * 0.9);
   tileSize = Math.floor(size / GRID);
   canvas.width = tileSize * GRID;
   canvas.height = tileSize * GRID;
@@ -40,7 +45,7 @@ function initBoard() {
       board.push({ correctX: x, correctY: y, x, y });
     }
   }
-  empty = board.pop(); // Último elemento es la ficha vacía
+  empty = board.pop(); 
 }
 
 function shuffleBoard() {
@@ -51,7 +56,7 @@ function shuffleBoard() {
     const n = neighbors[Math.floor(Math.random() * neighbors.length)];
     swap(n, empty);
   }
-  board.push(empty); // Agrega la ficha vacía nuevamente
+  board.push(empty);
 }
 
 function swap(a, b) {
@@ -61,7 +66,6 @@ function swap(a, b) {
 
 function drawBoard() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-
   board.forEach(p => {
     const sx = p.correctX * tileSize;
     const sy = p.correctY * tileSize;
@@ -69,10 +73,8 @@ function drawBoard() {
     const dy = p.y * tileSize;
 
     if (p === empty) {
-      // Dibuja el logo en el espacio vacío
       ctx.drawImage(logoImg, dx, dy, tileSize, tileSize);
     } else {
-      // Dibuja parte del rompecabezas
       ctx.drawImage(img, sx, sy, tileSize, tileSize, dx, dy, tileSize, tileSize);
     }
   });
@@ -83,23 +85,30 @@ canvas.addEventListener('click', e => {
   const my = Math.floor(e.offsetY / tileSize);
   const clicked = board.find(p => p.x === mx && p.y === my);
 
-  if (clicked && Math.abs(clicked.x - empty.x) + Math.abs(clicked.y - empty.y) === 1) {
+  if (clicked && isNeighbor(clicked, empty)) {
     swap(clicked, empty);
+    moveSound.currentTime = 0; 
+    moveSound.play(); 
     drawBoard();
 
     const isComplete = board.every(p => p.x === p.correctX && p.y === p.correctY);
-    if (isComplete) startRedirectCountdown();
+    if (isComplete) {
+      setTimeout(() => {
+        alert("¡Felicidades! Has completado el rompecabezas 🎉");
+        startRedirectCountdown();
+      }, 100);
+    }
   }
 });
 
-window.addEventListener('resize', () => {
-  if (!img.complete || !logoImg.complete) return;
-  setupCanvasSize();
-  drawBoard();
-});
+function isNeighbor(a, b) {
+  return Math.abs(a.x - b.x) + Math.abs(a.y - b.y) === 1;
+}
 
 function startRedirectCountdown() {
-  document.getElementById('countdown').style.display = 'block';
+  const countdown = document.getElementById('countdown');
+  countdown.style.display = 'block';
+  countdown.classList.add('opacity-100');
   let secs = redirectSeconds;
   document.getElementById('secs').textContent = secs;
 
@@ -112,3 +121,22 @@ function startRedirectCountdown() {
     }
   }, 1000);
 }
+
+function hideCountdown() {
+  const countdown = document.getElementById('countdown');
+  countdown.style.display = 'none';
+  countdown.classList.remove('opacity-100');
+}
+
+
+window.addEventListener('resize', () => {
+  if (!img.complete || !logoImg.complete) return;
+  setupCanvasSize();
+  drawBoard();
+});
+
+
+document.querySelector("button").addEventListener("click", () => {
+  clearInterval(countdownInterval);
+  startGame();
+});
