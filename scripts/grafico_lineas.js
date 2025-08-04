@@ -1,54 +1,84 @@
-const ctxLineas = document.getElementById('graficoLineas').getContext('2d');
 
-const graficoLineas = new Chart(ctxLineas, {
-    type: 'line',
-    data: {
-        labels: ["2015", "2016", "2017", "2018", "2019", "2020", "2021", "2022"],
-        datasets: [
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("../datos/capacidad_instalada.csv")
+    .then(response => response.text())
+    .then(csvText => {
+      const lines = csvText.trim().split("\n");
+      const headers = lines[0].split(",");
+      const años = [];
+      const datosEolica = [];
+      const datosSolar = [];
+      const datosGeotermica = [];
+
+      for (let i = 1; i < lines.length; i++) {
+        const [año, eolica, solar, geotermica] = lines[i].split(",");
+        años.push(año);
+        datosEolica.push(parseFloat(eolica));
+        datosSolar.push(parseFloat(solar));
+        datosGeotermica.push(parseFloat(geotermica));
+      }
+
+      const ctx = document.getElementById("graficoLineas").getContext("2d");
+
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels: años,
+          datasets: [
             {
-                label: 'Capacidad Eólica (GW)',
-                data: [120, 135, 150, 170, 200, 230, 260, 290],
-                borderColor: 'rgba(54, 162, 235, 1)',
-                fill: false,
-                tension: 0.1
+              label: "Eólica (GW)",
+              data: datosEolica,
+              borderColor: "#60a5fa",
+              backgroundColor: "#60a5fa33",
+              fill: false
             },
             {
-                label: 'Capacidad Solar PV (GW)',
-                data: [100, 120, 145, 180, 210, 260, 310, 370],
-                borderColor: 'rgba(255, 206, 86, 1)',
-                fill: false,
-                tension: 0.1
+              label: "Solar (GW)",
+              data: datosSolar,
+              borderColor: "#facc15",
+              backgroundColor: "#facc1533",
+              fill: false
             },
             {
-                label: 'Capacidad Geotérmica (GW)',
-                data: [13, 13.5, 14, 14.2, 14.5, 14.7, 15, 15.3],
-                borderColor: 'rgba(75, 192, 192, 1)',
-                fill: false,
-                tension: 0.1
+              label: "Geotérmica (GW)",
+              data: datosGeotermica,
+              borderColor: "#4ade80",
+              backgroundColor: "#4ade8033",
+              fill: false
             }
-        ]
-    },
-    options: {
-        responsive: true,
-        plugins: {
-            title: {
-                display: true,
-                text: 'Tendencia en la Capacidad Instalada de Energías Renovables'
-            }
+          ]
         },
-        scales: {
-            y: {
-                title: {
-                    display: true,
-                    text: 'Capacidad (GW)'
-                }
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Tendencia de Capacidad Instalada de Energías Renovables (GW)",
+              font: {
+                size: 18
+              }
             },
-            x: {
-                title: {
-                    display: true,
-                    text: 'Año'
-                }
+            legend: {
+              position: "bottom"
             }
+          },
+          scales: {
+            x: {
+              title: {
+                display: true,
+                text: "Año"
+              }
+            },
+            y: {
+              title: {
+                display: true,
+                text: "Capacidad Instalada (GW)"
+              },
+              beginAtZero: true
+            }
+          }
         }
-    }
+      });
+    });
 });
+

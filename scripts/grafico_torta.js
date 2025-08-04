@@ -1,40 +1,55 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const ctx = document.getElementById("graficoTorta");
 
-  if (ctx) {
-    new Chart(ctx, {
-      type: "pie",
-      data: {
-        labels: ["Energía Solar", "Energía Eólica", "Hidroeléctrica", "Otras Renovables"],
-        datasets: [{
-          label: "Participación en consumo eléctrico (%)",
-          data: [25, 35, 30, 10], // Reemplaza con tus datos reales si los tienes
-          backgroundColor: [
-            "#FACC15", // solar
-            "#60A5FA", // wind
-            "#34D399", // hydro
-            "#F87171"  // otras
-          ],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        responsive: true,
-        plugins: {
-          legend: {
-            position: "bottom",
-          },
-          title: {
-            display: true,
-            text: "Participación de Energías Renovables",
-            font: {
-              size: 18
+document.addEventListener("DOMContentLoaded", function () {
+  fetch("../datos/participacion_renovables.csv")
+    .then(response => response.text())
+    .then(csvText => {
+      const lines = csvText.trim().split("\n");
+      const labels = [];
+      const data = [];
+
+      // Saltamos la primera línea (encabezados)
+      for (let i = 1; i < lines.length; i++) {
+        const [tipo, porcentaje] = lines[i].split(",");
+        labels.push(tipo);
+        data.push(parseFloat(porcentaje));
+      }
+
+      const ctx = document.getElementById("graficoTorta").getContext("2d");
+
+      new Chart(ctx, {
+        type: "pie",
+        data: {
+          labels: labels,
+          datasets: [{
+            label: "Participación (%)",
+            data: data,
+            backgroundColor: [
+              "#60a5fa",
+              "#facc15",
+              "#4ade80",
+              "#fb923c",
+              "#c084fc"
+            ],
+            borderWidth: 1
+          }]
+        },
+        options: {
+          responsive: true,
+          plugins: {
+            title: {
+              display: true,
+              text: "Participación de Energías Renovables en el Consumo Eléctrico",
+              font: {
+                size: 18
+              },
+              color: "#1f2937"
+            },
+            legend: {
+              position: "bottom"
             }
           }
         }
-      }
+      });
     });
-  } else {
-    console.warn("No se encontró el canvas con id 'graficoTorta'");
-  }
 });
+

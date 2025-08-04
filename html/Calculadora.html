@@ -4,12 +4,11 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora Solar</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
 </head>
-<body class="bg-green-50 text-green-800 font-mono ">
+<body class="bg-gradient-to-b from-green-100 via-blue-50 to-white text-gray-800">
 
-  <!-- Navbar -->
+
   <header class="bg-green-700 w-full shadow-md z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -112,25 +111,28 @@
     </div>
   </section>
 
-  <!-- Enlaces a empresas -->
-  <section class="bg-green-800 py-12">
-    <div class="max-w-5xl mx-auto">
-      <h2 class="text-xl font-bold text-center text-white mb-6">
+  <footer class="bg-green-900 text-white text-center pt-6 pb-2 mt-8 text-sm">
+    <div class="max-w-5xl mx-auto mb-4">
+      <h2 class="text-base font-bold text-center text-white mb-2">
         Empresas que Instalan Paneles Solares en Colombia
       </h2>
-      <ul class="flex flex-wrap justify-center gap-6">
-        <li>
-          <a href="https://www.epm.com.co/clientesyusuarios/energia/tipos-de-energia/energia-solar/energia-solar-integral" target="_blank" class="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded shadow-md">EPM</a>
-        </li>
-        <li>
-          <a href="https://autosolar.co/energia-solar/empresas-de-paneles-solares-en-colombia" target="_blank" class="bg-yellow-500 hover:bg-yellow-600 text-white px-6 py-3 rounded shadow-md">AutoSolar</a>
-        </li>
-        <li>
-          <a href="https://www.celsia.com/es/soluciones-para-hogares-y-unidades-residenciales//" target="_blank" class="bg-orange-600 hover:bg-orange-700 text-white px-6 py-3 rounded shadow-md">Celsia</a>
-        </li>
-      </ul>
+      <div class="flex flex-wrap justify-center gap-8 items-center">
+        <a href="https://www.epm.com.co/clientesyusuarios/energia/tipos-de-energia/energia-solar/energia-solar-integral" target="_blank"
+           class="flex items-center justify-center bg-white hover:bg-green-100 rounded-xl shadow-lg p-2 transition w-32 h-14">
+          <img src="../assets/epm.png" alt="EPM" class="h-8 w-20 object-contain" />
+        </a>
+        <a href="https://autosolar.co/energia-solar/empresas-de-paneles-solares-en-colombia" target="_blank"
+           class="flex items-center justify-center bg-white hover:bg-yellow-50 rounded-xl shadow-lg p-2 transition w-32 h-14">
+          <img src="../assets/AutoSolar.webp" alt="AutoSolar" class="h-8 w-20 object-contain" />
+        </a>
+        <a href="https://www.celsia.com/es/soluciones-para-hogares-y-unidades-residenciales//" target="_blank"
+           class="flex items-center justify-center bg-white hover:bg-orange-50 rounded-xl shadow-lg p-2 transition w-32 h-14">
+          <img src="../assets/celsia.png" alt="Celsia" class="h-8 w-20 object-contain" />
+        </a>
+      </div>
     </div>
-  </section>
+    <p class="mt-4">&copy; 2025 Renueva tu Energía. Todos los derechos reservados.</p>
+  </footer>
 
   <script src="../scripts/solar.js"></script>
 </body>
