@@ -1,7 +1,7 @@
 <?php
 $host = "localhost";
 $user = "root";
-$pass = "";
+$pass = "4dm1n365";
 $dbname = "energia_renovable";
 
 $conn = new mysqli($host, $user, $pass, $dbname);
