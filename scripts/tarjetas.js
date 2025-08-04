@@ -47,25 +47,25 @@ function cargarDatos(rutaCSV, tipoGrafica, canvasId, opciones) {
 }
 
 // Procesar el contenido de un archivo CSV
-function procesarCSV(contenido) {
-    const lineas = contenido.split("\n").map((linea) => linea.trim());
-    const etiquetas = [];
-    const datos = [];
+//function procesarCSV(contenido) {
+    //const lineas = contenido.split("\n").map((linea) => linea.trim());
+    //const etiquetas = [];
+   // const datos = [];
 
-    lineas.forEach((linea, index) => {
-        if (linea) {
-            const [etiqueta, valor] = linea.split(",");
-            if (index === 0 && isNaN(Number(valor))) {
+   // lineas.forEach((linea, index) => {
+        //if (linea) {
+           // const [etiqueta, valor] = linea.split(",");
+           // if (index === 0 && isNaN(Number(valor))) {
                 // Omite encabezados si existen
-                return;
-            }
-            etiquetas.push(etiqueta);
-            datos.push(Number(valor));
-        }
-    });
+              //  return;
+          //  }
+           // etiquetas.push(etiqueta);
+          //  datos.push(Number(valor));
+       // }
+   // });
 
-    return { etiquetas, datos };
-}
+    //return { etiquetas, datos };
+//}
 
 // Función para generar una gráfica con Chart.js
 function generarGrafica(canvasId, etiquetas, datos, tipoGrafica, opciones) {
