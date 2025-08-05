@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Calculadora Solar</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body class="bg-gradient-to-b from-green-100 via-blue-50 to-white text-gray-800">
 
-
+  <!-- Header -->
   <header class="bg-green-700 w-full shadow-md z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
@@ -25,7 +26,8 @@
       </div>
     </div>
   </header>
-  
+
+  <!-- Main Content -->
   <main class="max-w-5xl mx-auto bg-green-100 p-10 mt-8 rounded-xl shadow-xl">
     <h2 class="text-4xl font-bold text-center text-green-800 mb-8">Calculadora de Ahorro e Inversión Solar ☀️</h2>
 
@@ -69,6 +71,18 @@
         </ul>
       </div>
 
+      <!-- Nueva Información sobre Tipos de Energía -->
+      <div class="mt-16">
+        <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">⚡ Comparativa de producción energética por fuente</h3>
+        <ul class="list-disc space-y-2 text-gray-700 pl-8">
+          <li><strong>Solar:</strong> 1 panel solar genera aproximadamente 400 W en promedio en condiciones óptimas de luz solar.</li>
+          <li><strong>Eólica:</strong> 1 turbina eólica pequeña produce alrededor de 2000 W bajo condiciones de viento moderadas.</li>
+          <li><strong>Hidroeléctrica:</strong> Una microcentral hidroeléctrica genera en promedio 10,000 W, dependiendo del caudal y desnivel del agua.</li>
+          <li><strong>Biocombustible:</strong> 1 litro de biocombustible (como biodiésel o etanol) produce aproximadamente 30 W de energía cuando se quema.</li>
+          <li><strong>Geotérmica:</strong> Una planta geotérmica pequeña genera cerca de 5000 W, extrayendo calor del interior de la Tierra.</li>
+        </ul>
+      </div>
+
       <canvas id="grafico" height="300"></canvas>
     </div>
   </main>
@@ -103,6 +117,8 @@
         </div>
       </div>
 
+      
+
       <div class="mt-12 text-center">
         <h4 class="text-2xl font-bold text-green-700">
           🌞 Cada kilovatio solar que generas es un paso hacia un hogar más libre, más limpio y más tuyo.
@@ -111,6 +127,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="bg-green-900 text-white text-center pt-6 pb-2 mt-8 text-sm">
     <div class="max-w-5xl mx-auto mb-4">
       <h2 class="text-base font-bold text-center text-white mb-2">
@@ -134,6 +151,7 @@
     <p class="mt-4">&copy; 2025 Renueva tu Energía. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="../scripts/solar.js"></script>
 </body>
 </html>
