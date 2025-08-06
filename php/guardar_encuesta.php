@@ -28,7 +28,7 @@
     <main class="flex items-center justify-center py-10 px-4">
         <?php
         // Incluir conexión
-        include("php/conexion.php");
+        include("../php/conexion.php");
 
         // Verificar si se enviaron todos los campos esperados
         if (
