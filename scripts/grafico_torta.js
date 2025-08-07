@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("../datos/participacion_renovables.csv")
+  fetch("../datos/participacion_renovables.csv?t=" + new Date().getTime())
+
     .then(response => response.text())
     .then(csvText => {
       const lines = csvText.trim().split("\n");
