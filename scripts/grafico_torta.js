@@ -1,4 +1,3 @@
-
 document.addEventListener("DOMContentLoaded", function () {
   fetch("../datos/participacion_renovables.csv")
     .then(response => response.text())
@@ -7,11 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
       const labels = [];
       const data = [];
 
-      // Saltamos la primera línea (encabezados)
+      // Saltamos encabezado
       for (let i = 1; i < lines.length; i++) {
-        const [tipo, porcentaje] = lines[i].split(",");
-        labels.push(tipo);
-        data.push(parseFloat(porcentaje));
+        const [energia, participacion] = lines[i].split(",");
+        labels.push(energia.trim());
+        data.push(parseFloat(participacion.trim()));
       }
 
       const ctx = document.getElementById("graficoTorta").getContext("2d");
@@ -24,13 +23,14 @@ document.addEventListener("DOMContentLoaded", function () {
             label: "Participación (%)",
             data: data,
             backgroundColor: [
-              "#60a5fa",
-              "#facc15",
-              "#4ade80",
-              "#fb923c",
-              "#c084fc"
+              "#60a5fa", // azul
+              "#facc15", // amarillo
+              "#4ade80", // verde
+              "#fb923c", // naranja
+              "#c084fc"  // morado
             ],
-            borderWidth: 1
+            borderColor: "#ffffff",
+            borderWidth: 2
           }]
         },
         options: {
@@ -52,4 +52,3 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 });
-
