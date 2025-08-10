@@ -12,34 +12,34 @@
   <!-- Header -->
   <header class="bg-green-700 w-full shadow-md z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between items-center h-16">
-        <div class="flex items-center">
-          <img src="../assets/solar2-removebg-preview.png" alt="Logo" class="h-16 w-auto">
-          <span class="ml-3 text-xl font-semibold text-white">Renueva tu Energía</span>
+      <div class="flex flex-wrap justify-between items-center h-auto py-4 gap-4">
+        <div class="flex items-center w-full sm:w-auto justify-center sm:justify-start">
+          <img src="../assets/solar2-removebg-preview.png" alt="Logo" class="h-12 w-auto">
+          <span class="ml-3 text-lg sm:text-xl font-semibold text-white">Renueva tu Energía</span>
         </div>
-        <nav class="space-x-6">
-          <a href="home.html" class="text-white hover:text-green-200 font-medium text-lg">Inicio</a>
-          <a href="aboutus.html" class="text-white hover:text-green-200 font-medium text-lg">Sobre Nosotros</a>
-          <a href="Calculadora.html" class="text-white hover:text-green-200 font-medium text-lg">Calcular</a>
-          <a href="contact.html" class="text-white hover:text-green-200 font-medium text-lg">Contacto</a>
+        <nav class="flex flex-wrap justify-center gap-4 text-sm sm:text-base">
+          <a href="home.html" class="text-white hover:text-green-200 font-medium">Inicio</a>
+          <a href="aboutus.html" class="text-white hover:text-green-200 font-medium">Sobre Nosotros</a>
+          <a href="Calculadora.html" class="text-white hover:text-green-200 font-medium">Calcular</a>
+          <a href="contact.html" class="text-white hover:text-green-200 font-medium">Contacto</a>
         </nav>
       </div>
     </div>
   </header>
 
   <!-- Main Content -->
-  <main class="max-w-5xl mx-auto bg-green-100 p-10 mt-8 rounded-xl shadow-xl">
-    <h2 class="text-4xl font-bold text-center text-green-800 mb-8">Calculadora de Ahorro e Inversión Solar ☀️</h2>
+  <main class="max-w-5xl mx-auto bg-green-100 p-6 sm:p-10 mt-6 rounded-xl shadow-xl">
+    <h2 class="text-2xl sm:text-4xl font-bold text-center text-green-800 mb-6 sm:mb-8">Calculadora de Ahorro e Inversión Solar ☀️</h2>
 
-    <form id="formulario" class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <form id="formulario" class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div>
         <label for="kwh" class="block font-semibold text-gray-700 mb-2">Consumo mensual (kWh)</label>
-        <input type="number" id="kwh" required placeholder="Ej: 305" class="w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-green-400">
+        <input type="number" id="kwh" required placeholder="Ej: 305" class="w-full p-3 sm:p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-green-400">
       </div>
 
       <div>
         <label for="pago" class="block font-semibold text-gray-700 mb-2">Pago mensual actual (COP)</label>
-        <input type="number" id="pago" required placeholder="Ej: 180000" class="w-full p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-green-400">
+        <input type="number" id="pago" required placeholder="Ej: 180000" class="w-full p-3 sm:p-4 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring focus:ring-green-400">
       </div>
 
       <p id="valorPromedioKwh" class="col-span-full text-center text-green-800 font-medium"></p>
@@ -51,17 +51,17 @@
     </form>
 
     <div id="resultado" class="mt-10 hidden space-y-6">
-      <div class="bg-green-100 border border-green-300 p-6 rounded-xl shadow">
+      <div class="bg-green-100 border border-green-300 p-4 sm:p-6 rounded-xl shadow">
         <p class="text-green-900 font-semibold" id="ahorro"></p>
         <p class="text-green-900 font-semibold" id="costoSolar"></p>
         <p class="text-green-900 font-semibold" id="tiempoRetorno"></p>
         <p class="text-green-900" id="panelesNecesarios"></p>
       </div>
 
-      <div class="bg-yellow-100 border border-yellow-300 p-6 rounded-xl shadow">
+      <div class="bg-yellow-100 border border-yellow-300 p-4 sm:p-6 rounded-xl shadow">
         <p class="text-yellow-900 font-semibold mb-2" id="costoPorKwh"></p>
         <p class="text-yellow-900 font-semibold mb-2">🔌 Recomendaciones para ahorrar energía:</p>
-        <ul class="text-yellow-800 list-disc list-inside space-y-1">
+        <ul class="text-yellow-800 list-disc list-inside space-y-1 text-sm sm:text-base">
           <li>Usa bombillos LED en lugar de incandescentes.</li>
           <li>Desconecta electrodomésticos que no estés usando.</li>
           <li>Evita dejar el cargador del celular conectado.</li>
@@ -71,87 +71,47 @@
         </ul>
       </div>
 
-      <!-- Nueva Información sobre Tipos de Energía -->
-      <div class="mt-16">
-        <h3 class="text-2xl font-bold text-center text-gray-800 mb-4">⚡ Comparativa de producción energética por fuente</h3>
-        <ul class="list-disc space-y-2 text-gray-700 pl-8">
-          <li><strong>Solar:</strong> 1 panel solar genera aproximadamente 400 W en promedio en condiciones óptimas de luz solar.</li>
-          <li><strong>Eólica:</strong> 1 turbina eólica pequeña produce alrededor de 2000 W bajo condiciones de viento moderadas.</li>
-          <li><strong>Hidroeléctrica:</strong> Una microcentral hidroeléctrica genera en promedio 10,000 W, dependiendo del caudal y desnivel del agua.</li>
-          <li><strong>Biocombustible:</strong> 1 litro de biocombustible (como biodiésel o etanol) produce aproximadamente 30 W de energía cuando se quema.</li>
-          <li><strong>Geotérmica:</strong> Una planta geotérmica pequeña genera cerca de 5000 W, extrayendo calor del interior de la Tierra.</li>
+      <div class="mt-12">
+        <h3 class="text-xl sm:text-2xl font-bold text-center text-gray-800 mb-4">⚡ Comparativa de producción energética por fuente</h3>
+        <ul class="list-disc space-y-2 text-gray-700 pl-5 text-sm sm:text-base">
+          <li><strong>Solar:</strong> 1 panel solar genera aproximadamente 400 W en promedio.</li>
+          <li><strong>Eólica:</strong> 1 turbina eólica pequeña produce alrededor de 2000 W.</li>
+          <li><strong>Hidroeléctrica:</strong> Una microcentral hidroeléctrica genera 10,000 W en promedio.</li>
+          <li><strong>Biocombustible:</strong> 1 litro produce aproximadamente 30 W al quemarse.</li>
+          <li><strong>Geotérmica:</strong> Una planta pequeña genera cerca de 5000 W.</li>
         </ul>
       </div>
 
-      <canvas id="grafico" height="300"></canvas>
+      <div class="overflow-x-auto">
+        <canvas id="grafico" height="300"></canvas>
+      </div>
     </div>
   </main>
 
-  <!-- Información Educativa -->
-  <section class="bg-gradient-to-r from-yellow-50 to-green-100 py-16 px-6">
-    <div class="max-w-6xl mx-auto">
-      <h2 class="text-4xl font-bold text-center text-gray-800 mb-6">¿Por qué debemos hacer la transición a energías renovables?</h2>
-      <p class="text-lg text-gray-600 text-center mb-10">
-        La energía convencional basada en combustibles fósiles es limitada, costosa y contaminante. La energía solar es limpia, abundante y cada vez más accesible. Pero… ¿por qué no todos la usan aún?
-      </p>
-
-      <div class="grid md:grid-cols-2 gap-10">
-        <div class="bg-green-200 p-6 rounded-xl shadow-md">
-          <h3 class="text-2xl font-semibold text-red-600 mb-4">Obstáculos actuales</h3>
-          <ul class="list-disc space-y-2 text-gray-700 pl-5">
-            <li><strong>Inversión inicial alta</strong>: muchas familias no pueden pagar de contado.</li>
-            <li><strong>Falta de información</strong>: no saben cuántos paneles necesitan ni cómo funciona.</li>
-            <li><strong>Ausencia de financiamiento</strong>: pocos créditos o planes de pago accesibles.</li>
-            <li><strong>Falta de confianza</strong> en empresas instaladoras o en la tecnología.</li>
-          </ul>
-        </div>
-
-        <div class="bg-green-300 p-6 rounded-xl shadow-md">
-          <h3 class="text-2xl font-semibold text-green-600 mb-4">¿Cómo lograr una transición real?</h3>
-          <ul class="list-disc space-y-2 text-gray-700 pl-5">
-            <li><strong>Instala por fases</strong>: empieza con 1 o 2 paneles y ve ampliando según tus posibilidades.</li>
-            <li><strong>Simula tu ahorro</strong>: compara tu factura actual con lo que ahorrarías.</li>
-            <li><strong>Busca asesoría confiable</strong>: apóyate en entidades o técnicos certificados.</li>
-            <li><strong>Piensa a largo plazo</strong>: es una inversión que te libera de la factura eléctrica.</li>
-          </ul>
-        </div>
-      </div>
-
-      
-
-      <div class="mt-12 text-center">
-        <h4 class="text-2xl font-bold text-green-700">
-          🌞 Cada kilovatio solar que generas es un paso hacia un hogar más libre, más limpio y más tuyo.
-        </h4>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
-  <footer class="bg-green-900 text-white text-center pt-6 pb-2 mt-8 text-sm">
+  <footer class="bg-green-900 text-white text-center pt-6 pb-4 mt-8 text-sm">
     <div class="max-w-5xl mx-auto mb-4">
       <h2 class="text-base font-bold text-center text-white mb-2">
         Empresas que Instalan Paneles Solares en Colombia
       </h2>
-      <div class="flex flex-wrap justify-center gap-8 items-center">
+      <div class="flex flex-wrap justify-center gap-6 items-center">
         <a href="https://www.epm.com.co/clientesyusuarios/energia/tipos-de-energia/energia-solar/energia-solar-integral" target="_blank"
-           class="flex items-center justify-center bg-white hover:bg-green-100 rounded-xl shadow-lg p-2 transition w-32 h-14">
-          <img src="../assets/epm.png" alt="EPM" class="h-8 w-20 object-contain" />
+           class="flex items-center justify-center bg-white hover:bg-green-100 rounded-xl shadow-lg p-2 transition w-28 h-14">
+          <img src="../assets/epm.png" alt="EPM" class="max-h-8 max-w-full object-contain" />
         </a>
         <a href="https://autosolar.co/energia-solar/empresas-de-paneles-solares-en-colombia" target="_blank"
-           class="flex items-center justify-center bg-white hover:bg-yellow-50 rounded-xl shadow-lg p-2 transition w-32 h-14">
-          <img src="../assets/AutoSolar.webp" alt="AutoSolar" class="h-8 w-20 object-contain" />
+           class="flex items-center justify-center bg-white hover:bg-yellow-50 rounded-xl shadow-lg p-2 transition w-28 h-14">
+          <img src="../assets/AutoSolar.webp" alt="AutoSolar" class="max-h-8 max-w-full object-contain" />
         </a>
         <a href="https://www.celsia.com/es/soluciones-para-hogares-y-unidades-residenciales//" target="_blank"
-           class="flex items-center justify-center bg-white hover:bg-orange-50 rounded-xl shadow-lg p-2 transition w-32 h-14">
-          <img src="../assets/celsia.png" alt="Celsia" class="h-8 w-20 object-contain" />
+           class="flex items-center justify-center bg-white hover:bg-orange-50 rounded-xl shadow-lg p-2 transition w-28 h-14">
+          <img src="../assets/celsia.png" alt="Celsia" class="max-h-8 max-w-full object-contain" />
         </a>
       </div>
     </div>
     <p class="mt-4">&copy; 2025 Renueva tu Energía. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Scripts -->
   <script src="../scripts/solar.js"></script>
 </body>
 </html>

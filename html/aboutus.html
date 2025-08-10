@@ -5,41 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Sobre Nosotros</title>
   <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <script>
+    function toggleMenu() {
+      document.getElementById("mobileMenu").classList.toggle("hidden");
+    }
+  </script>
 </head>
 <body class="bg-gradient-to-b from-green-100 via-blue-50 to-white text-gray-800">
 
-
+  <!-- Header -->
   <header class="bg-green-700 w-full shadow-md z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
+        <!-- Logo -->
         <div class="flex items-center">
           <img src="../assets/solar2-removebg-preview.png" alt="Logo" class="h-16 w-auto">
-          <span class="ml-3 text-xl font-semibold text-white">Renueva tu Energía</span>
+          <span class="ml-3 text-lg md:text-xl font-semibold text-white">Renueva tu Energía</span>
         </div>
-        <nav class="space-x-6">
-          <a href="home.html" class="text-white hover:text-green-200 font-medium text-lg">Inicio</a>
-          <a href="aboutus.html" class="text-white hover:text-green-200 font-medium text-lg">Sobre Nosotros</a>
-          <a href="Calculadora.html" class="text-white hover:text-green-200 font-medium text-lg">Calcular</a>
-          <a href="contact.html" class="text-white hover:text-green-200 font-medium text-lg">Contacto</a>
+        
+        <!-- Menú Desktop -->
+        <nav class="hidden md:flex space-x-6">
+          <a href="home.html" class="text-white hover:text-green-200 font-medium">Inicio</a>
+          <a href="aboutus.html" class="text-white hover:text-green-200 font-medium">Sobre Nosotros</a>
+          <a href="Calculadora.html" class="text-white hover:text-green-200 font-medium">Calcular</a>
+          <a href="contact.html" class="text-white hover:text-green-200 font-medium">Contacto</a>
         </nav>
+
+        <!-- Botón Móvil -->
+        <button class="md:hidden text-white focus:outline-none" onclick="toggleMenu()">
+          ☰
+        </button>
+      </div>
+
+      <!-- Menú Móvil -->
+      <div id="mobileMenu" class="hidden flex-col space-y-2 pb-4 md:hidden">
+        <a href="home.html" class="block text-white hover:text-green-200">Inicio</a>
+        <a href="aboutus.html" class="block text-white hover:text-green-200">Sobre Nosotros</a>
+        <a href="Calculadora.html" class="block text-white hover:text-green-200">Calcular</a>
+        <a href="contact.html" class="block text-white hover:text-green-200">Contacto</a>
       </div>
     </div>
   </header>
 
+  <!-- Sección Principal -->
   <section class="text-center py-10 px-4">
-    <h1 class="text-4xl font-extrabold text-green-800">Sobre Nosotros</h1>
-    <p class="mt-4 text-lg max-w-3xl mx-auto">Somos una plataforma educativa dedicada a asesorar personas interesadas en adoptar energía solar. No realizamos instalaciones, pero te damos las herramientas para entender y decidir.</p>
+    <h1 class="text-3xl md:text-4xl font-extrabold text-green-800">Sobre Nosotros</h1>
+    <p class="mt-4 text-base md:text-lg max-w-3xl mx-auto">Somos una plataforma educativa dedicada a asesorar personas interesadas en adoptar energía solar. No realizamos instalaciones, pero te damos las herramientas para entender y decidir.</p>
   </section>
 
+  <!-- ¿Qué hacemos? -->
   <section class="bg-white py-10 px-6 rounded-lg shadow-md max-w-5xl mx-auto">
-    <h2 class="text-3xl font-semibold text-green-800 text-center mb-6">¿Qué hacemos?</h2>
-    <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto">Te ayudamos a entender si la energía solar es una buena opción para ti, cómo funciona, cuánto podrías ahorrar y qué deberías saber antes de hablar con una empresa instaladora.</p>
+    <h2 class="text-2xl md:text-3xl font-semibold text-green-800 text-center mb-6">¿Qué hacemos?</h2>
+    <p class="text-base md:text-lg text-gray-700 text-center max-w-3xl mx-auto">Te ayudamos a entender si la energía solar es una buena opción para ti, cómo funciona, cuánto podrías ahorrar y qué deberías saber antes de hablar con una empresa instaladora.</p>
   </section>
 
-  <section class="mt-10">
+  <!-- ¿Cómo te ayudamos? -->
+  <section class="mt-10 px-4">
     <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-xl transition duration-300 max-w-4xl mx-auto">
-      <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">¿Cómo te ayudamos?</h2>
-      <ul class="list-disc list-inside text-black text-lg space-y-2">
+      <h2 class="text-2xl md:text-3xl font-semibold text-center text-green-800 mb-6">¿Cómo te ayudamos?</h2>
+      <ul class="list-disc list-inside text-gray-800 text-base md:text-lg space-y-2">
         <li>Analizamos tu consumo energético y tus necesidades reales.</li>
         <li>Te explicamos qué tipo de paneles solares se adaptan mejor a tu caso.</li>
         <li>Te orientamos en presupuestos, comparación de proveedores e instalación.</li>
@@ -48,48 +72,51 @@
     </div>
   </section>
 
-  <section class="mt-10">
-    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Nuestros Valores</h2>
-    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto px-4">
+  <!-- Valores -->
+  <section class="mt-10 px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center text-green-800 mb-6">Nuestros Valores</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6 max-w-6xl mx-auto">
       <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-bold text-green-800 mb-2">🌿 Compromiso Ambiental</h3>
+        <h3 class="text-lg md:text-xl font-bold text-green-800 mb-2">🌿 Compromiso Ambiental</h3>
         <p class="text-sm text-gray-600">Creemos en un futuro más limpio a través del uso consciente de la energía.</p>
       </div>
       <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-bold text-green-800 mb-2">🤝 Asesoría Transparente</h3>
+        <h3 class="text-lg md:text-xl font-bold text-green-800 mb-2">🤝 Asesoría Transparente</h3>
         <p class="text-sm text-gray-600">Nos importa que tomes decisiones con información clara y honesta.</p>
       </div>
       <div class="bg-white rounded-lg shadow-md p-4 text-center hover:shadow-xl transition duration-300">
-        <h3 class="text-xl font-bold text-green-800 mb-2">📚 Educación Accesible</h3>
+        <h3 class="text-lg md:text-xl font-bold text-green-800 mb-2">📚 Educación Accesible</h3>
         <p class="text-sm text-gray-600">Explicamos todo de manera sencilla para que entiendas el proceso sin complicaciones.</p>
       </div>
     </div>
   </section>
 
-  <section class="mt-16 max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Misión y Visión</h2>
+  <!-- Misión y Visión -->
+  <section class="mt-16 max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center text-green-800 mb-6">Misión y Visión</h2>
     <div class="grid md:grid-cols-2 gap-8">
       <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold text-green-700 mb-2">🎯 Misión</h3>
+        <h3 class="text-lg md:text-xl font-bold text-green-700 mb-2">🎯 Misión</h3>
         <p class="text-gray-700">Guiar a las personas en su transición hacia una energía más limpia mediante información clara, precisa y accesible.</p>
       </div>
       <div class="bg-white p-6 rounded-lg shadow-md">
-        <h3 class="text-xl font-bold text-green-700 mb-2">🚀 Visión</h3>
+        <h3 class="text-lg md:text-xl font-bold text-green-700 mb-2">🚀 Visión</h3>
         <p class="text-gray-700">Ser referentes en asesoría energética en Latinoamérica, promoviendo un cambio sostenible y consciente.</p>
       </div>
     </div>
   </section>
 
-  <section class="mt-16 max-w-5xl mx-auto px-6">
-    <h2 class="text-3xl font-semibold text-center text-green-800 mb-6">Nuestro Equipo</h2>
-    <div class="grid md:grid-cols-3 gap-6">
+  <!-- Equipo -->
+  <section class="mt-16 max-w-5xl mx-auto px-4">
+    <h2 class="text-2xl md:text-3xl font-semibold text-center text-green-800 mb-6">Nuestro Equipo</h2>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div class="bg-white p-4 rounded-lg shadow-md text-center">
-        <img src="../assets/jennifer2.jpg" alt="Miembro 1" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
+        <img src="../assets/jennifer2.jpg" alt="Jennifer Ramirez" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
         <h3 class="font-bold text-green-700">Jennifer Ramirez</h3>
         <p class="text-sm text-gray-600">Programador Junior</p>
       </div>
       <div class="bg-white p-4 rounded-lg shadow-md text-center">
-        <img src="../assets/JS.jpeg" alt="Miembro 2" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
+        <img src="../assets/JS.jpeg" alt="Juan Serna" class="mx-auto rounded-full mb-4 h-24 w-24 object-cover"/>
         <h3 class="font-bold text-green-700">Juan Serna</h3>
         <p class="text-sm text-gray-600">Programador Junior</p>
       </div>
@@ -101,6 +128,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer class="mt-20 bg-green-900 text-white text-center py-6">
     <p>&copy; 2025 Renueva tu Energía. Todos los derechos reservados.</p>
   </footer>

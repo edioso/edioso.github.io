@@ -102,6 +102,16 @@
   }
 }
 
+.container {
+  width: 90%;   /* Antes: 1200px */
+  max-width: 1200px;
+  margin: auto;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
 
 
 
